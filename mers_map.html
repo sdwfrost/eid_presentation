@@ -154,8 +154,8 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', {
 	}).addTo(map);
 
 queue()
-        .defer(d3.json, "http://rambaut.github.io/MERS-Cases/data/cities.json")
-        .defer(d3.csv, "http://rambaut.github.io/MERS-Cases/data/cases.csv")
+        .defer(d3.json, "data/mers_cities.json")
+        .defer(d3.csv, "data/mers_cases.csv")
         .await(ready);
 
 
