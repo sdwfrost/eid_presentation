@@ -1,0 +1,81 @@
+<!doctype>
+<head>
+	<link type="text/css" rel="stylesheet" href="css/rickshaw.css">
+	<script src="js/d3.min.js"></script>
+	<script src="js/rickshaw.js"></script>
+	<script src="js/rainbowvis.js"></script>
+	<script src="data/gflu.jsonp"></script>
+</head>
+<body>
+
+<div id="chart_container">
+	<div id="chart"></div>
+	<div id="legend_container">
+		<div id="smoother" title="Smoothing"></div>
+		<div id="legend"></div>
+	</div>
+	<div id="slider"></div>
+</div>
+
+<script>
+/* var rainbow = new Rainbow();
+rainbow.setNumberRange(0,28);
+var linecols = [];
+for (var i=0;i <= 28; i=i+1){
+    linecols.push(rainbow.colourAt(i));
+} */
+
+/* var gfluscript = document.createElement('script');
+gfluscript.src = "data/gflu.jsonp";
+document.getElementsByTagName('head')[0].appendChild(gfluscript); */
+
+gflu2=[];
+for(var i=0;i<=3;i=i+1){
+	gflu2.push(gflu[i]);
+}
+gflu=gflu2;
+gflu[0].color="red";
+gflu[1].color="orange";
+gflu[2].color="green";
+gflu[3].color="blue";
+
+/* var palette = new Rickshaw.Color.Palette();
+for (var i=0;i <= 28; i=i+1){
+    gflu.color=palette.color();
+} */
+
+//instantiate our graph!
+
+var graph = new Rickshaw.Graph( {
+	element: document.getElementById("chart"),
+	width: 960,
+	height: 500,
+	renderer: 'line',
+	series: gflu
+} );
+
+graph.render();
+
+var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+	graph: graph
+} );
+
+var legend = new Rickshaw.Graph.Legend( {
+	graph: graph,
+	element: document.getElementById('legend')
+
+} );
+
+var shelving = new Rickshaw.Graph.Behavior.Series.Toggle( {
+	graph: graph,
+	legend: legend
+} );
+
+var axes = new Rickshaw.Graph.Axis.Time( {
+	graph: graph
+} );
+axes.render();
+
+</script>
+
+</body>

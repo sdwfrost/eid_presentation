@@ -1,0 +1,83 @@
+storyjs_jsonp_data = {
+    "timeline":
+    {
+        "headline":"MERS-Coronavirus",
+        "type":"default",
+		"text":"Timelines of MERS-CoV",
+		"startDate":"2012,1,26",
+        "date": [
+            {
+                "startDate":"2012,6,10",
+				"endDate":"2012,6,10",
+                "headline":"Virus characterised",
+                "text":"<p>CoV-EMC, Jeddah, KSA</p>",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,9,20",
+				"endDate":"2012,9,20",
+                "headline":"ProMED announcement",
+                "text":"",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,9,27",
+				"endDate":"2012,9,27",
+                "headline":"First PCR assays published",
+                "text":"",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,9,29",
+				"endDate":"2012,9,29",
+                "headline":"First WHO case definition",
+                "text":"",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,10,5",
+				"endDate":"2012,10,5",
+                "headline":"ProMED announcement",
+                "text":"Cluster #2, KSA",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,10,10",
+				"endDate":"2012,10,30",
+                "headline":"Hajj",
+                "text":"",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            }
+        ]
+    }
+}

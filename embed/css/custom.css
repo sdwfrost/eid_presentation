@@ -1,0 +1,20 @@
+#eidmap {
+    height: 600px;
+    width: 100%;
+    background: #EDF6FF;
+    border: 1px solid #ccf;
+}
+
+#eidmap.animstart g {
+    -webkit-transform: translate(600px,0);
+    -webkit-transition: 1s -webkit-transform;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transform: translate(600px,0);
+    -moz-transition: 1s -moz-transform;
+    -moz-transition-timing-function: ease-out;
+}
+
+#eidmap.animend g {
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+}

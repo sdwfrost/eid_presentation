@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Concepts in Emerging Infections</title>
+
+		<meta name="description" content="Talk for Part II Pathology">
+		<meta name="author" content="Simon Frost">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+       
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+
+        <style type="text/css">
+        .wrap {
+        width:900px;
+        margin:0 auto;
+        }
+        .left_col {
+        float:left;
+        width:500px;
+        }
+        .right_col {
+        float:right;
+        width:400px;
+        }
+        </style>
+        
+        <!-- jQuery -->
+        <script src="js/jquery.min.js"></script>
+        
+        <!-- D3 and NVD3 -->
+		<link rel=stylesheet href="css/nv.d3.css">
+		<script src="js/d3.js"></script>
+		<script src="js/nv.d3.js"></script>
+
+        <script type="text/javascript" src="js/newick.js"></script>
+        <script type="text/javascript" src="js/d3.phylogram.js"></script>
+  
+        <!-- MathJax -->
+        <script type="text/javascript" src="mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        
+       <!-- Override styles -->
+       <link rel="stylesheet" href="css/custom.css">
+        
+        <script>
+        $('li.expandable ul').slideUp();
+        $('li.expandable ul').click(function() {
+            $(this).children('ul').slideToggle();
+            $(this).siblings('li').find('ul').slideUp();
+            return false;
+        });
+        </script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2 style="color: #8B008B">Concepts in Emerging Infections</h2>
+					<h3>Simon D.W. Frost, M.A. D.Phil.</h3>
+					<p>
+						Dept. of Veterinary Medicine, University of Cambridge
+					</p>
+				</section>
+
+				<section>
+					<h2>Introduction</h2>
+					<ul>
+					    <li class="fragment">What is an emerging infection?</li>
+					    <li class="fragment">Why do pathogens emerge?</li>
+					    <li class="fragment">Where do pathogens emerge?</li>
+					    <li class="fragment">When do pathogens emerge?</li>
+						<li class="fragment">Zoonoses and emerging infections:</li>
+						<ul>
+						<li class="fragment">What are the stages through which a zoonotic pathogen emerges?</li>
+						<li class="fragment">How might evolution play a role in this emergence?</li>
+						</ul>
+						<li class="fragment">Surveillance of emerging infections</li>
+						<li class="fragment">Some examples</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>What is an emerging infectious disease?</h2>
+					<blockquote class="fragment roll-in" style="font-size: 80%"><strong>Diseases of infectious origin whose incidence in humans has increased within the last two decades or threatens to increase in the near future.</strong><br>CDC (1994)</blockquote>
+					<br>
+					<blockquote class="fragment roll-in" style="font-size: 80%"><strong>An infectious disease whose incidence is increasing following its first introduction into a defined host population, or an infectious disease whose incidence is increasing in a defined host population as a result of long term changes in its epidemiology.</strong><br>Woolhouse and Dye (2001)</blockquote>
+				</section>
+
+                <section>
+                    <h2>What is a zoonosis?</h2>
+                    <blockquote class="fragment roll-in" style="font-size: 80%"><strong>Any disease which can be transmitted to humans from animals.</strong><br>Oxford English Dictionary</blockquote>
+                    <br>
+                    <blockquote class="fragment roll-in" style="font-size: 80%"><strong>Diseases or infections which are naturally transmitted between vertebrate animals and humans.</strong><br>WHO (1959)</blockquote>
+                </section>
+
+                <section>
+                    <h2>What is a vector-borne disease?</h2>
+                    <img src="img/mosquito.png" height="20%">
+                    <div class="source" style="font-size: 50%"><a>pamca.org</a></div>
+                    <ul style="font-size: 80%">
+                        <li class="fragment">Typically defined as a disease transmitted to an animal through an intermediate arthropod vector, including ticks or insects</li>
+                        <li class="fragment">Hence a vector borne disease is discriminated from a zoonosis in two ways</li>
+                        <ul>
+                            <li class="fragment">Transmission from arthropod vs. vertebrate</li>
+                            <li class="fragment">Vector is obligate part of the pathogen lifecycle</li>
+                        </ul>
+                        <li class="fragment">Many diseases are both vector-borne and zoonotic</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>What is a reservoir?</h2>
+                    <blockquote class="fragment roll-in" style="font-size: 80%"><strong>A population which is chronically infested with the causative agent of a disease and can infect other populations.</strong><br>
+Oxford English Dictionary</blockquote>
+                    <blockquote class="fragment roll-in" style="font-size: 80%"><strong>An ecological system in which the infectious agent survives indefinitely.</strong><br>
+Ashford, R.W. (1997) Belgian J Zoology 127:85</blockquote>
+                    <blockquote class="fragment roll-in" style="font-size: 80%"><strong>One or more epidemiologically connected populations or environments in which the pathogen can be permanently maintained and from which infection is transmitted to the defined target population.</strong><br>Haydon et al. (2002)</blockquote>
+                </section>
+
+				<section>
+					<h2>Simple and complex reservoir systems</h2>
+	  			    <img src="img/reservoirkey.svg" width="80%" class="center">
+	  			    <br>
+	  			    <div id="reservoirs" class="carousel slide">
+	  			 <!-- Carousel nav -->
+                <a class="carousel-control left" href="#reservoirs" data-slide="prev">&#8592;</a>&nbsp;
+                <a class="carousel-control right" href="#reservoirs" data-slide="next">&#8594;</a>
+                <br><br>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="active item"><img src="img/reservoir1.svg" style='margin: 0 auto;border: 0px;'></div>
+                        <div class="item"><img src="img/reservoir2.svg" style='margin: 0 auto;border: 0px;'></div>
+                        <div class="item"><img src="img/reservoir3.svg" style='margin: 0 auto;border: 0px;'></div>
+                        <div class="item"><img src="img/reservoir6.svg" style='margin: 0 auto;border: 0px;'></div>
+                        <div class="item"><img src="img/reservoir7.svg" style='margin: 0 auto;border: 0px;'></div>
+                    </div>
+                    <br>
+                    </div>
+                    <div class="source" style="font-size: 50%">Adapted from Haydon et al. (2002)</div>
+				</section>
+
+				<section>
+					<h2>Rabies in Zimbabwe</h2>
+					<img src="img/2012-bb-jackal-1.jpg" height="250">
+					<div class="source" style="font-size: 50%">Wikipedia</div>
+					<ul style="font-size: 80%">
+					    <li class="fragment">Domestic dogs are a maintenance and source population of rabies for humans</li>
+					    <li class="fragment">Jackals account for >25% of all confirmed rabies cases in animals and are also an important source of infection for humans</li>
+					    <li class="fragment">As rabies can be maintained in dogs without jackals, jackals are not an essential constituent population of the reservoir.</li>
+	                </ul>
+				</section>
+				
+				<section>
+					<h2>Maintenance hosts in rabies</h2>
+	  			    <!-- <img src="img/reservoirkey.svg" width="80%" class="center"> -->
+	  			    <div id="maintenance" class="carousel slide">
+	  			 <!-- Carousel nav -->
+                <a class="carousel-control left" href="#maintenance" data-slide="prev">&#8592;</a>&nbsp;
+                <a class="carousel-control right" href="#maintenance" data-slide="next">&#8594;</a>
+                <br><br>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="active item"><img src="img/rabies1.svg" style='margin: 0 auto;border: 0px;'><br>Maintenance=Jackals+wild carnivores</div>
+                        <div class="item"><img src="img/rabies2.svg" style='margin: 0 auto;border: 0px;'><br>Maintenance=Jackals only</div>
+                        <div class="item"><img src="img/rabies3.svg" style='margin: 0 auto;border: 0px;'><br>Maintenance=Dogs</div>
+                    </div>
+                    <br>
+                    </div>
+				</section>
+				
+				<section>
+					<h2>Why do pathogens emerge or re-emerge?</h2>
+					<ol>
+					    <li class="fragment highlight-red">Changes in land use or agricultural practices</li>
+					    <li class="fragment highlight-red">Changes in human demographics and society</li>
+					    <li class="fragment highlight-red">Poor population health (e.g. HIV, malnutrition)</li>
+					    <li class="fragment highlight-red">Hospitals and medical procedures</li>
+					    <li class="fragment highlight-red">Pathogen evolution</li>
+					    <li class="fragment highlight-red">Contamination of food or water</li>
+					    <li class="fragment highlight-red">International travel</li>
+					    <li class="fragment highlight-red">Failure of public health programs</li>
+					    <li class="fragment highlight-red">International trade</li>
+					    <li class="fragment highlight-red">Climate change</li>
+					</ol>
+				</section>
+
+                <section>
+                    <h2>Zoonoses and emerging/re-emerging pathogens</h2>
+                    <ul>
+                        <li>Woolhouse and Gowtage-Sequeria (2005) conducted a literature survey and found:</li>
+                        <ul>
+                            <li>1407 recognized species of human pathogen</li>
+                            <li>58% were zoonotic</li>
+                            <li>177 were emerging/re-emerging</li>
+                            <li>Zoonotic pathogens were twice as likely to be emerging/re-emerging</li>
+                            <li>Pathogens with multiple hosts were more likely to be zoonotic</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hosts and pathogens in emerging zoonoses</h2>
+                    <div id="eidfig">
+	                    <div class="chart" width="800" height="600"></div>
+	                </div>
+                </section>
+                
+                <section>
+                    <h2>Where do pathogens emerge from?</h2>
+                    <ul>
+                        <li>The same human population</li>
+                        <li>Other human populations</li>
+                        <li>The environment</li>
+                        <ul>
+                            <li>Legionella (Legionnaire's Disease)</li>
+                            <li>Coccidiomycosis (Valley Fever)</li>
+                        </ul>
+                        <li>Animal reservoirs i.e. zoonoses</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>Where do emerging infections emerge?</h2>
+                    <ul>
+                        <li>Jones et al. (Nature 2008) analyzed a database of 335 EID ‘events’ (origins of EIDs) between 1940 and 2004</li>
+                        <li>EID events are dominated by zoonoses (60.3% of EIDs): the majority of these (71.8%) originate in wildlife and are increasing significantly over time</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>Map of EID</h2>
+
+	            <script>
+		            CM_ATTR = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				        'Imagery © <a href="http://cloudmade.com">CloudMade</a>';
+		            CM_URL = 'http://{s}.tile.cloudmade.com/d4fc77ea4a63471cab2423e66626cbb6/{styleId}/256/{z}/{x}/{y}.png';
+		            OSM_URL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+		            OSM_ATTRIB = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+	           </script>
+                    <div style="width:100%;height:600px;border:1x solid black;">
+                    <iframe src="embed/eidmap.html" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Discovery of new human viruses</h2>
+                    <img src="img/virusdiscovery.jpg" width="75%" class="centred" style="margin: 20px 100px">
+                    <div class="source">Woolhouse et al. (2012)</div>
+                </section>
+                
+                <section>
+                    <h2>Recently discovered viruses in animals</h2>
+                    <div style="margin-left: auto; margin-right: auto;">
+                    <img src="img/kapoor.svg" class="coverpage" width="25%" style="margin: 0px 0px; float: left; background: white;">
+                    <img src="img/quan.svg" class="coverpage" width="25%" style="margin: 0px 0px; float: left; background: white;">
+                    <img src="img/lauck.svg" class="coverpage" width="25%" style="margin: 0px 0px; float: left; background: white;">
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Zoonoses</h2>
+                    <img src="img/zoonosisstages.png" width="55%" class="centred" style="margin: 20px 100px">
+                    <div class="source">Wolfe, Dunavan and Diamond (2007)</div>
+                </section>
+                
+                <section>
+                    <h2>Zoonoses and emergence</h2>
+                    <ul>
+                        <li>What is the reservoir, and the dynamics of transmission in the reservoir?</li>
+                        <li>What is the nature and frequency of cross-species jumps?</li>
+                        <li>What happens when the pathogen jumps host?</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>Evolution and emergence</h2>
+                   <ul>
+                       <li>Initially, a zoonotic infection may be poorly adapted to its new human host</li>
+                       <li>Whether emergence occurs may depend on the mutations required to infect a new host, and the impact that these mutations have in each host</li>
+                       <li>Even limited transmission within humans may be sufficient to allow further mutations</li>
+                   </ul>
+                </section>
+                
+                <section>
+                    <h2>Fitness and host jumps</h2>
+                    <img id="fitnessvalley" src="img/fitnessvalley.png" width="40%" class="centred" style="margin: 20px 100px">
+                    <div class="source">Kuiken et al. (2006)</div>
+                </section>
+                
+                 <section>
+                    <h2>Evolution, emergence, and R<sub>0</sub></h2>
+                    <img src="img/antia.png" width="70%" class="centred" style="margin: 20px 100px">
+                    <div class="source">Antia et al. (2003)</div>
+                </section>
+                
+                <!-- <section>
+                    <h2>SIR</h2>
+                    <div id="detsim"></div>
+                </section> -->
+
+				<section>
+					<h2>Surveillance of emerging infectious diseases</h2>
+					<ul>
+						<li>Surveillance of EID is complicated as they may be unanticipated</li>
+						<li>Improvements in diagnostics has led to the discovery of many new viruses, but it is not clear whether these cause disease or not</li>
+						<li>Frequently, we rely on syndromic surveillance to detect new diseases</li>
+					</ul>	
+				</section>
+				
+				<section>
+					<h2>Google Flu Trends</h2>
+					<iframe frameborder="0" scrolling="no" class="stretch" src="gflu.html" style="-webkit-transform:scale(0.75);-moz-transform-scale(0.75);"></iframe>
+				</section>
+
+				<!-- <section>
+					<h2>Healthmap</h2>
+					<iframe frameborder="0" scrolling="no" class="stretch" src="http://healthmap.org" style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);"></iframe>
+				</section> -->
+				
+				<section>
+					<h2>Here be zombies</h2>
+					<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=zombies&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=800&h=600"></script>
+				</section>
+				
+				<section>
+					<h2>Here be zombies</h2>
+					<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=zombies&content=1&cid=GEO_MAP_0_0&export=5&w=600&h=390"></script>
+				</section>
+				
+                <section>
+                    <h2>Examples of zoonoses</h2>
+                    <ul>
+                    	<li>Many examples covered in detail in other parts of the course (WNV, SARS, etc.)</li>
+                    	<li>Brief examples here:</li>
+                    	<ul>
+                    		<li>Hantavirus</li>
+                    		<li>MERS-CoV</li>
+                    	</ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hantavirus</h2>
+<iframe id="dit-video-embed" width="640" height="360" src="http://snagplayer.video.dp.discovery.com/635637/snag-it-player.htm?auto=no" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <iframe id="dit-video-embed" width="640" height="360" src="http://snagplayer.video.dp.discovery.com/635637/snag-it-player.htm?auto=no" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </section>
+
+				<section>
+					<h2>Hantaviruses</h2>
+					<ul>
+						<li>Hantaviruses are negative-sense single-stranded RNA viruses that infect many species of rodents, shrews, moles and bats</li>
+						<li>Reservoir hosts are typically asymptomatic</li>
+						<li>Some rodent-borne hantaviruses also infect humans</li>
+						<ul>
+							<li>Haemorrhagic fever with renal syndrome (HFRS)</li>
+							<li>Hantavirus (cardio)pulmonary syndrome (H(C)PS)</li>
+						</ul>
+					</ul>
+				</section>
+                <section>
+                    <h2>Haemorrhagic fever with renal syndrome</h2>
+                    <ul>
+                       <li>Disease first described in Russia in 1913</li>
+                       <li>Outbreak in North and South Korea in 1951</li>
+                       <li>Associated with viruses in the hantavirus genus in the Old World, each with different primary hosts</li>
+                       <ul>
+                       	<li>Hantaan virus - Apodemus agrarius</li>
+                       	<li>Seoul virus - Rattus rattus and norvegicus</li>
+                       	<li>Puumala virus - Clethrionomys glareolus</li>
+                       	<li>Dobrava virus - Apodemus flavicollis</li>
+                       </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hantavirus pulmonary syndrome</h2>
+                    <ul>
+                       <li>Hantavirus pulmonary syndrome (HPS) is a potentially fatal disease from rodents</li>
+                       <li>Humans can contract the disease when they come into contact with infected rodents or their urine and droppings</li>
+                       <li>First recognized in May 1993 in the "Four Corners" in the SW United States</li>
+                       <ul>
+                           <li>A number of previously healthy young adults suddenly developed acute respiratory symptoms; about half soon died</li>
+                           <li>Thought to be due to heavy rains in 1993, leading to an increase in food supply for deer mice</li>
+                       </ul>
+                        <li>The new virus was called Muerto Canyon virus—later changed to Sin Nombre virus (SNV)</li>
+                    </ul>
+                </section>
+
+
+
+                <section>
+                	<h2>Hantaviruses and hosts</h2>
+                    <img src="img/hantamap.png" class="stretch">
+                    <div class="source">Guo et al. (2013)</div>
+                </section>
+
+				<section>
+					<h2>Cophylogeny of hantaviruses and hosts</h2>
+                    <img src="img/hantatangle.png" class="stretch">
+                    <div class="source">Guo et al. (2013)</div>
+                </section>
+
+
+                <!-- <section>
+                    <h2>Influenza A H7N9</h2>
+                    <iframe frameborder="0" scrolling="no" width="512" height="288" src="http://live.wsj.com/public/page/embed-0AD5E1B6_0D1C_456B_AB68_6FB0E24AA1B1.html"></iframe>
+                </section> -->
+
+                <section>
+                    <h2>MERS-CoV</h2>
+                    <script type="text/javascript" src="http://video.foxnews.com/v/embed.js?id=2432399291001&w=640&h=360"></script><noscript>Watch the latest video at <a href="http://video.foxnews.com">video.foxnews.com</a></noscript>
+                </section>
+                
+                <section>
+                    <h2>MERS-CoV timeline</h2>
+                    <!-- <div id="timeline-embed" style="height: 80%;"></div> -->
+                    <iframe height="800" width="900" frameborder="0" scrolling="no" src="mers_jsonp.html"></iframe>
+                </section>
+                
+                <section>
+                	<h2>MERS-CoV human cases</h2>
+                	<iframe height="600" width="900" frameborder="0" scrolling="no" src="mers_map.html"></iframe>
+                	<div class="source">Andrew Rambaut</div>
+                </section>
+                
+                <section>
+                	<h2>MERS-CoV human cases</h2>
+                	<iframe height="270" width="900" frameborder="0" scrolling="no" src="mers_timeseries.html"></iframe>
+                	<div class="source">Andrew Rambaut</div>
+                </section>
+                
+                <section>
+                    <h2>Timing of MERS-CoV</h2>
+                    <img src="img/MERS-CoV.13.SRD06.UCLN.ECG.MCC.png" width="90%" class="centred" style="margin: 20px 100px">
+                    <div class="source">Andrew Rambaut</div>
+                </section>
+         
+                <section>
+                    <h2>Bat viruses and MERS-CoV</h2>
+                    <img src="img/13-0946-F1.jpg" width="70%" class="centred" style="margin: 20px 100px">
+                    <div class="source">Ithete et al. 2013</div>
+                </section>
+                
+                <section>
+                    <h2>Egyptian tomb bat and MERS-CoV</h2>
+                    <img src="img/mersphylo.jpg" width="40%" class="centred" style="margin: 20px 100px">
+                    <div class="source">Memish et al. 2013</div>
+                </section>
+                
+                <section>
+                    <h2>Camels and MERS-CoV</h2>
+                    <img src="img/camelphylo.jpg" width="40%" class="centred" style="margin: 20px 100px">
+                    <div class="source">Haagmans et al. 2014</div>
+                </section>
+                
+                <section>
+                	<h2>Conclusions</h2>
+                	<ul>
+                		<li>Viruses such as MERS-CoV and hantaviruses are just two examples of emerging infectious diseases</li>
+                		<li>EID is on the rise; many factors may contribute to this</li>
+                		<li>We still understand little about pathogen diversity, especially in wildlife</li>
+                		<li>Cross-species transmissions are still relatively rare events, although with potentially great impact</li>
+                	</ul>
+                </section>
+			</div>
+
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+        <!-- Reveal -->
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				theme: Reveal.getQueryHash().theme || 'solarized', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				parallaxBackgroundImage: 'img/Triangle-White-Seamless-Patterns.jpg',
+				parallaxBackgroundSize: '1920px 1080px',
+				
+				//parallaxBackgroundImage: 'img/purpledamask.jpg',
+				//parallaxBackgroundSize: '1680px 1050px',
+
+                //parallaxBackgroundImage: 'img/wood.jpg',
+				//parallaxBackgroundSize: '2560px 1440px',
+
+                //parallaxBackgroundImage: 'img/blackboard.jpg',
+				//parallaxBackgroundSize: '1698px 1131px',
+				
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+		<script type="text/javascript" src="js/eidfig.js"></script>
+		<script type="text/javascript">
+          var timeline_config = {
+           width: "100%",
+           height: "100%",
+           source: 'data/mers_jsonp.jsonp'
+        }
+        </script>
+        <script type="text/javascript" src="js/storyjs-embed.js"></script>
+	</body>
+</html>
+

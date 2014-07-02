@@ -1,0 +1,125 @@
+storyjs_jsonp_data = {
+    "timeline":
+    {
+        "headline":"MERS-Coronavirus",
+        "type":"default",
+		"text":"Timelines of MERS-CoV",
+		"startDate":"2012,1,26",
+		"asset":
+		{
+			 "media":"img/mersem.jpg",
+             "credit":"",
+             "caption":""
+		},
+        "date": [
+            {
+                "startDate":"2012,6,10",
+				"endDate":"2012,6,10",
+                "headline":"Virus characterised",
+                "text":"<p>CoV-EMC, Jeddah, KSA</p>",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,9,20",
+				"endDate":"2012,9,20",
+                "headline":"ProMED announcement",
+                "text":"A new human coronavirus was isolated from a patient with pneumonia by Dr Ali Mohamed Zaki at the Virology Laboratory of Dr Soliman Fakeeh Hospital Jeddah Saudi Arabia.",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,9,27",
+				"endDate":"2012,9,27",
+                "headline":"First PCR assays published",
+                "text":"",
+                "asset":
+                {
+                    "media":"img/merspcr_thumb.png",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,9,25",
+				"endDate":"2012,9,25",
+                "headline":"First interim WHO case definition",
+                "text":"Acute respiratory syndrome, requiring hospitalization, possible lower airway involvement, close contact with another case or travel/residence in area of transmission",
+                "asset":
+                {
+                    "media":"img/WHOLogo.png",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,09,22",
+				"endDate":"2012,09,22",
+                "headline":"Second case",
+                "text":"Infection with a novel coronavirus in a patient in a London hospital who had been transferred from Qatar 11 days previously",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,10,10",
+				"endDate":"2012,10,30",
+                "headline":"Hajj",
+                "text":"",
+                "asset":
+                {
+                    "media":"img/hajj2013a.jpg",
+                    "credit":"Associated Press/Hassan Ammar",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,07,24",
+				"endDate":"2013,07,24",
+                "headline":"Virus related to MERS-CoV found in bats in South Africa",
+                "text":"",
+                "asset":
+                {
+                    "media":"img/merslikebat.jpg",
+                    "credit":"M. Corrie Schoeman/University of KwaZulu-Natal",
+                    "caption":"Neoromicia cf. zuluensis"
+                }
+            },
+             {
+                "startDate":"2013,08,09",
+				"endDate":"2013,08,09",
+                "headline":"MERS-CoV antibody found in dromedary camels in Oman and Spain",
+                "text":"",
+                "asset":
+                {
+                    "media":"img/merssero.jpg",
+                    "credit":"Reusken et al. (2013)",
+                    "caption":"Serological responses for a range of coronaviruses and hosts"
+                }
+            },
+            {
+                "startDate":"2013,08,21",
+				"endDate":"2013,08,21",
+                "headline":"MERS-CoV found in bats",
+                "text":"",
+                "asset":
+                {
+                    "media":"img/mersbat.jpg",
+                    "credit":"Jonathan H. Epstein/EcoHealth Alliance 2013",
+                    "caption":"Egyptian tomb bat"
+                }
+            }
+        ]
+    }
+}
